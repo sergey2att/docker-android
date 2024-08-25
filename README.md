@@ -1,15 +1,13 @@
 # docker-android
----
-![screenshot.png](android-emulator/screenshot.png)
+![screenshot.png](screenshot.png)
+
 The project allows to run android emulator in docker container. This is convenient when used in CI/CD
 # Requirements
----
 - Docker must be installed.
 - KVM must be available. You can get access to KVM by running on "bare metal", or on a (virtual) machine that provides nested virtualization.
 
 *NOTE: The images will not run in docker on mac or windows* :slightly_smiling_face:
 # Quick start
-___
 Build image:
 ```bash
 docker build --build-arg SDK_VERSION=34 --build-arg EMULATOR_ARCH=x86_64 --build-arg EMULATOR_TYPE=google_apis -t sys-34-google_apis-x86_64:latest .
