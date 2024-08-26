@@ -21,7 +21,7 @@ Uses `--device /dev/kvm` to have CPU acceleration.
 
 You also have the option setup addition [emulator run arguments](https://developer.android.com/studio/run/emulator-commandline) and mount a /data partition which the emulator will use if available. This enables you to use a tmpfs which can give increased performance, especially in the nested virtualization scenario.
 ```bash
-docker run --rm --device /dev/kvm --mount type=tmpfs,destination=/data --publish 8554:8554/tcp --publish 5554:5554/tcp --publish 5555:5555/tcp --privileged -e "EMULATOR_PARAMS=-timezone Europe/Moscow" sys-34-google_apis-x86_64:latest
+docker run --rm --device /dev/kvm --mount type=tmpfs,destination=/data --publish 8554:8554/tcp --publish 5554:5554/tcp --publish 5555:5555/tcp --privileged -e EMULATOR_PARAMS="-timezone Europe/Moscow" sys-34-google_apis-x86_64:latest
 ```
 # Note
 The project is based on [Avito-android](https://github.com/avito-tech/avito-android) with minor add-ons.
